@@ -3,15 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package model;
 
 /**
  *
  * @author memo_
  */
-public class admindao {
+public class Usuarios {
+    private int idusuario;
     private String usuario ;
-    private String password;  
+    private String password;
+    
 
     public String getUsuario() {
         return usuario;
@@ -28,6 +30,4 @@ public class admindao {
     public void setPassword(String password) {
         this.password = password;
     }
-
-   
 }

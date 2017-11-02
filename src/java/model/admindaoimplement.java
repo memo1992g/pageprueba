@@ -7,7 +7,6 @@ package model;
 
 
 import java.util.List;
-import dao.admindao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,23 +21,23 @@ import java.util.logging.Logger;
  */
 public class admindaoimplement {
       
-    public List<admindao> getListaAdmin(String usuario, String password){
+    public List<Usuarios> getListaAdmin(String usuario, String password){
    //simplificar en una linea 
         
         Conexion conexion = new Conexion("35.202.122.108","prueba","root","1234");
         Connection cnn = conexion.getConexion();
-        List<admindao> lista = new ArrayList<>();
+        List<Usuarios> lista = new ArrayList<>();
         ResultSet rs = null;
         PreparedStatement psmt;
         try {
-            psmt = cnn.prepareStatement("select *from usuarios where usuario = ? and password = ?");
+            psmt = cnn.prepareStatement("call get_usuario(?,?)");
             psmt.setString(1, usuario);
             psmt.setString(2, password);
             rs = psmt.executeQuery();   
   //simplificar en una linea 
             
             while(rs.next()){
-            admindao d = new admindao();
+            Usuarios d = new Usuarios();
             d.setUsuario(rs.getString("usuario"));
             d.setPassword(rs.getString("password"));
             lista.add(d);

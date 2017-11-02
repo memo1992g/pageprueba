@@ -6,7 +6,7 @@
 package web.controler;
 
 import model.admindaoimplement;
-import dao.admindao;
+import model.Usuarios;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
@@ -21,7 +21,7 @@ import javax.faces.bean.RequestScoped;
 public class classcontroller {
 public String usuario; 
 public String password;
- private List<admindao> lista = new ArrayList<>();
+ private List<Usuarios> lista = new ArrayList<>();
 
  admindaoimplement admin = new admindaoimplement();  
 
@@ -30,35 +30,28 @@ public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
+public void setUsuario(String usuario) {
+    this.usuario = usuario;
+}
 
-    public String getPassword() {
-        return password;
-    }
+public String getPassword() {
+    return password;
+}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+public void setPassword(String password) {
+    this.password = password;
+}
 
-    public List<admindao> getLista() {
-        return lista;
-    }
+public List<Usuarios> getLista() {
+    return lista;
+}
 
-    public void setLista(List<admindao> lista) {
-        this.lista = lista;
-    }
-
-
-    
+public void setLista(List<Usuarios> lista) {
+    this.lista = lista;
+}
 
     
-    
 
-    
-    
-   
     public String val(){
         lista = admin.getListaAdmin(usuario,password);
         if (lista.size() >0 ){
