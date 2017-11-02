@@ -3,29 +3,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
-  
-     <h:head>
-        <title>hola mundo </title>
+   <h:head>
+        <title>bienvenido </title>
     </h:head>
     <h:body>
-        <h2><center>bienvenido a la programacion </center></h2>
+        <h2><center>CONTROL DE ACCESO </center></h2>
         <center>
         <h:form>           
             <p:panel header="Login">
                 <p:panelGrid columns="3" >
-            LOGIN : 
+                          usuario: 
             <p:inputText id="usuario" size="30" required="true" requiredMessage="ingrese su login" value="#{classcontroller.usuario}"/>
             <p:message id="msgUsuario" for="usuario" />   
             <br/>
-            CONTRASEÑA:
-            <p:password id="password" size ="40" required ="true" requiredMessage="ingrese su contraseña " value ="#{classcontroller.password}"/>
-            <p:message id="msgPassword" for="password" />
-            </p:panelGrid>
-                <p:commandButton value="enviar" action="#{classcontroller.val()}"/>                     
+                          contraseña:
+           
+             <p:password id="password" value="#{classcontroller.password}" feedback="true" />
+             <p:message id="msgPassword" for="password" />
+             <br/>
+             
+             <p:selectOneMenu id="console"  style="width:125px">
+            <f:selectItem itemLabel="seleccione uno" itemValue="" />
+            <f:selectItem itemLabel="gerente" itemValue="gerente" />
+            <f:selectItem itemLabel="supervisor" itemValue="supervisor" />
+            <f:selectItem itemLabel="gato" itemValue="gato" />
+        </p:selectOneMenu>
+           
+                </p:panelGrid>
+                <p:commandButton value="enviar" icon="ui-icon-key" action="#{classcontroller.val()}"/>                     
           
+              
+            
+            
             </p:panel>
             
-            <br/>
+           
+           
         </h:form> 
             
         </center>
