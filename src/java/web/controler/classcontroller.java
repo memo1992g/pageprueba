@@ -21,6 +21,15 @@ import javax.faces.bean.RequestScoped;
 public class classcontroller {
 public String usuario; 
 public String password;
+private String mensaje ="bienvenido";
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
  private List<admindao> lista = new ArrayList<>();
 
  admindaoimplement admin = new admindaoimplement();  
@@ -62,7 +71,13 @@ public String getUsuario() {
     public String val(){
         lista = admin.getListaAdmin(usuario,password);
         if (lista.size() >0 ){
-        return "bienvenido.xhtml";
+       
+            
+           
+            return "bienvenido.xhtml";
+            
+        
+        
     }else {
             return "error.xhtml";
         }
