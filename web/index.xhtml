@@ -12,7 +12,7 @@
         <center>
         <h:form>           
             <p:panel header="Login">
-                <p:panelGrid columns="3" >
+                
                           usuario: 
             <p:inputText id="usuario" size="30" required="true" requiredMessage="ingrese su login" value="#{classcontroller.usuario}"/>
             <p:message id="msgUsuario" for="usuario" />   
@@ -23,6 +23,7 @@
              <p:message id="msgPassword" for="password" />
              <br/>
              
+             <center>SelectOnMenu datos quemados </center>
              <p:selectOneMenu id="console"  style="width:125px">
             <f:selectItem itemLabel="seleccione uno" itemValue="" />
             <f:selectItem itemLabel="administrador" itemValue="gerente" />
@@ -30,8 +31,17 @@
             <f:selectItem itemLabel="agente" itemValue="gato" />
             
         </p:selectOneMenu>
+             <center>SelectOnMenu desde base de dastos </center>
+             <p:selectOneMenu id="perfiles" value="#{perfilesBean.perfiles.idperfil}">
+                 <f:selectItem itemLabel="Seleccione perfil" itemValue=""/>
+                 <f:selectItems value="#{perfilesBean.listPerfiles}"/>
+                 <f:ajax execute="perfiles" render="pSeleccionado"/>
+             </p:selectOneMenu>
+                 
+             <p:outputLabel value="Pais seleccionado: "/>
+             <p:outputLabel id="pSeleccionado" value="#{perfilesBean.perfiles.idperfil}"/>
            
-                </p:panelGrid>
+                
                 <p:commandButton value="enviar" icon="ui-icon-key" action="#{classcontroller.val()}"/>                     
           
               

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-nov-2017 17:18:31 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Perfiles" table="perfiles" catalog="prueba" optimistic-lock="version">
+        <id name="idperfil" type="java.lang.Integer">
+            <column name="idperfil" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreperfil" type="string">
+            <column name="nombreperfil" length="200" />
+        </property>
+        <property name="activo" type="int">
+            <column name="activo" not-null="true" />
+        </property>
+        <property name="creadopor" type="string">
+            <column name="creadopor" length="45" />
+        </property>
+        <property name="fechacreacion" type="timestamp">
+            <column name="fechacreacion" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
