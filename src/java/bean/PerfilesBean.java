@@ -9,8 +9,8 @@ import dao.PerfilesDao;
 import imp.PerfilesDaoImp;
 import java.util.ArrayList;
 import java.util.List;
-import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.faces.model.SelectItem;
 import model.Perfiles;
 
@@ -18,8 +18,8 @@ import model.Perfiles;
  *
  * @author MASTER
  */
-@Named(value = "perfilesBean")
-@RequestScoped
+@ManagedBean
+@ViewScoped
 public class PerfilesBean {
 
     private List<SelectItem> listPerfiles;
